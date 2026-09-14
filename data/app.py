@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
-# Load the trained model and column list
-model = joblib.load('nids_model.pkl')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = joblib.load(os.path.join(BASE_DIR, 'nids_model.pkl'))
 model_columns = joblib.load('model_columns.pkl')
 
 st.set_page_config(page_title="NIDS - Network Intrusion Detection", layout="wide")
