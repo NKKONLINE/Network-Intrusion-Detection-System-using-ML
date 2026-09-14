@@ -5,7 +5,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 model = joblib.load(os.path.join(BASE_DIR, 'nids_model.pkl'))
-model_columns = joblib.load('model_columns.pkl')
+model_columns = joblib.load(os.path.join(BASE_DIR, 'model_columns.pkl'))
 
 st.set_page_config(page_title="NIDS - Network Intrusion Detection", layout="wide")
 
